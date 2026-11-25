@@ -1,0 +1,22 @@
+# GPU host: serves Qwen2.5-1.5B-Instruct + the fine-tuned LoRA adapter with vLLM, and the debrief API.
+services:
+  vllm:
+    image: vllm/vllm-openai:latest
+    command: >
+      --model Qwen/Qwen2.5-1.5B-Instruct --enable-lora --max-lora-rank 16
+      --lora-modules debrief=/adapters/final_adapter --max-model-len 4096
+    volumes: ["./outputs/qwen2.5-1.5b-debrief:/adapters:ro", "~/.cache/huggingface:/root/.cache/huggingface"]
+    ports: ["8000:8000"]
+    deploy:
+      resources:
+        reservations:
+          devices: [{driver: nvidia, count: 1, capabilities: [gpu]}]
+  api:
+    build: .
+    environment:
+      DEBRIEF_BACKEND: openai
+      DEBRIEF_URL: http://vllm:8000/v1
+      DEBRIEF_MODEL: debrief
+    volumes: ["./data:/data:ro"]
+    ports: ["8080:8080"]
+    depends_on: [vllm]

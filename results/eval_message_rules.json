@@ -1,0 +1,36 @@
+{
+  "name": "message_rules",
+  "all": {
+    "n": 84,
+    "json_valid": 1.0,
+    "fault_acc": 0.524,
+    "macro_f1": 0.542,
+    "subsystem_acc": 0.524,
+    "onset_mae_s": 41.8,
+    "onset_within_30s": 0.846,
+    "grounded_rate": 1.0,
+    "hallucination_rate": 0.0
+  },
+  "full": {
+    "n": 42,
+    "json_valid": 1.0,
+    "fault_acc": 0.833,
+    "macro_f1": 0.821,
+    "subsystem_acc": 0.833,
+    "onset_mae_s": 41.8,
+    "onset_within_30s": 0.846,
+    "grounded_rate": 1.0,
+    "hallucination_rate": 0.0
+  },
+  "silent": {
+    "n": 42,
+    "json_valid": 1.0,
+    "fault_acc": 0.214,
+    "macro_f1": 0.039,
+    "subsystem_acc": 0.214,
+    "onset_mae_s": null,
+    "onset_within_30s": null,
+    "grounded_rate": null,
+    "hallucination_rate": 0.0
+  }
+}

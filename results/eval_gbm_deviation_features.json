@@ -1,0 +1,36 @@
+{
+  "name": "gbm_deviation_features",
+  "all": {
+    "n": 84,
+    "json_valid": 1.0,
+    "fault_acc": 0.857,
+    "macro_f1": 0.862,
+    "subsystem_acc": 0.881,
+    "onset_mae_s": 27.4,
+    "onset_within_30s": 0.857,
+    "grounded_rate": null,
+    "hallucination_rate": 0.0
+  },
+  "full": {
+    "n": 42,
+    "json_valid": 1.0,
+    "fault_acc": 0.857,
+    "macro_f1": 0.862,
+    "subsystem_acc": 0.881,
+    "onset_mae_s": 27.4,
+    "onset_within_30s": 0.857,
+    "grounded_rate": null,
+    "hallucination_rate": 0.0
+  },
+  "silent": {
+    "n": 42,
+    "json_valid": 1.0,
+    "fault_acc": 0.857,
+    "macro_f1": 0.862,
+    "subsystem_acc": 0.881,
+    "onset_mae_s": 27.4,
+    "onset_within_30s": 0.857,
+    "grounded_rate": null,
+    "hallucination_rate": 0.0
+  }
+}

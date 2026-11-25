@@ -1,0 +1,23 @@
+# Single T4 (16 GB, fp16) or L4/A10/A100 (set bf16: true, fp16: false). ~25-40 min on 2k examples.
+base_model: Qwen/Qwen2.5-1.5B-Instruct
+train_file: data/sft/train.jsonl
+val_file: data/sft/val.jsonl
+output_dir: outputs/qwen2.5-1.5b-debrief
+epochs: 3
+batch_size: 2
+grad_accum: 8
+lr: 2.0e-4
+max_seq_len: 2048
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+target_modules: all-linear
+fp16: true
+bf16: false
+load_in_4bit: false        # true -> QLoRA (bitsandbytes) for 7B models on a T4
+gradient_checkpointing: true
+eval_steps: 50
+logging_steps: 10
+report_to: none            # wandb | mlflow | tensorboard
+merge_and_save: false
+seed: 0

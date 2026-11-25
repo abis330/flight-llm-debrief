@@ -1,0 +1,16 @@
+# Offline CI smoke test: tiny random Qwen2-architecture model + locally trained BPE tokenizer.
+base_model: tiny
+train_file: data/sft/train.jsonl
+val_file: data/sft/val.jsonl
+output_dir: outputs/smoke
+max_steps: 4
+batch_size: 2
+grad_accum: 1
+lr: 1.0e-3
+max_seq_len: 4096
+max_train_examples: 16
+lora_r: 4
+lora_alpha: 8
+gradient_checkpointing: false
+eval_steps: 4
+logging_steps: 1
